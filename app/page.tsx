@@ -1,8 +1,8 @@
 const services = [
-  { n: "01", title: "Interior painting", text: "Clean lines, smooth walls, and color that makes every room feel intentionally yours.", cls: "interior" },
-  { n: "02", title: "Exterior painting", text: "Weather-ready prep and premium coatings built to protect and elevate your home.", cls: "exterior" },
-  { n: "03", title: "Cabinet refinishing", text: "A factory-smooth finish that transforms your kitchen without a full renovation.", cls: "cabinets" },
-  { n: "04", title: "Epoxy floors", text: "Durable, seamless floors for garages, workshops, and high-use spaces.", cls: "epoxy" },
+  { n: "01", title: "Modern office spaces", text: "How thoughtful paint colors improve focus, reinforce your brand, and make contemporary workplaces feel better.", cls: "interior article-modern", href: "/blog/modern-office-spaces" },
+  { n: "02", title: "Going bold: how to choose", text: "A practical guide to selecting statement colors with confidence, balance, and lasting appeal.", cls: "exterior article-bold", href: "/blog/going-bold-how-to-choose" },
+  { n: "03", title: "The many shades of white", text: "Learn how undertones, natural light, and finish change the way white paint looks in your home.", cls: "cabinets article-white", href: "/blog/the-many-shades-of-white" },
+  { n: "04", title: "When to go dark", text: "Discover where deep paint colors work best and how to use them without making a room feel smaller.", cls: "epoxy article-dark", href: "/blog/when-to-go-dark" },
 ];
 
 const projects = [
@@ -53,8 +53,8 @@ export default function Home() {
       </section>
 
       <section className="services section" id="services">
-        <div className="section-heading"><div><p className="eyebrow">What we do</p><h2>Coatings with <em>character.</em></h2></div><p>Thoughtful prep. Premium materials. A finish that looks exceptional from every angle.</p></div>
-        <div className="service-grid">{services.map((s) => <article className={`service-card ${s.cls}`} key={s.title}><span className="service-number">{s.n}</span><div><h3>{s.title}</h3><p>{s.text}</p></div><a href="#estimate" aria-label={`Ask about ${s.title}`}>↗</a></article>)}</div>
+        <div className="section-heading"><div><p className="eyebrow">Color journal</p><h2>Ideas with <em>character.</em></h2></div><p>Practical color guidance for homes and workplaces, written to help you make confident design decisions.</p></div>
+        <div className="service-grid">{services.map((s) => <article className={`service-card ${s.cls}`} key={s.title}><span className="service-number">{s.n}</span><div><h3>{s.title}</h3><p>{s.text}</p></div><a href={s.href} aria-label={`Read ${s.title}`}>↗</a></article>)}</div>
       </section>
 
       <section className="projects section" id="projects">
