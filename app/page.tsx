@@ -1,0 +1,78 @@
+const services = [
+  { n: "01", title: "Interior painting", text: "Clean lines, smooth walls, and color that makes every room feel intentionally yours.", cls: "interior" },
+  { n: "02", title: "Exterior painting", text: "Weather-ready prep and premium coatings built to protect and elevate your home.", cls: "exterior" },
+  { n: "03", title: "Cabinet refinishing", text: "A factory-smooth finish that transforms your kitchen without a full renovation.", cls: "cabinets" },
+  { n: "04", title: "Epoxy floors", text: "Durable, seamless floors for garages, workshops, and high-use spaces.", cls: "epoxy" },
+];
+
+const projects = [
+  { title: "Warm, modern interior", tag: "Interior", cls: "project-one" },
+  { title: "A brighter first impression", tag: "Exterior", cls: "project-two" },
+  { title: "Kitchen, completely refreshed", tag: "Cabinets", cls: "project-three" },
+  { title: "Garage built to perform", tag: "Epoxy", cls: "project-four" },
+];
+
+const faqs = [
+  ["How much does a painting project cost?", "Every project is different. We provide a clear, itemized estimate after learning about your space, surfaces, and finish goals—without hidden fees."],
+  ["Do you help with color selection?", "Yes. We can help narrow your palette and choose colors and sheens that work with your light, furnishings, architecture, and daily life."],
+  ["How do you protect my home?", "We carefully cover floors, furniture, landscaping, hardware, and adjacent surfaces. At the end of each day, we leave the work area clean and orderly."],
+  ["What paint products do you use?", "We use professional-grade coatings selected for the surface and environment. We will explain the recommended system before work begins."],
+];
+
+export default function Home() {
+  return (
+    <main>
+      <section className="hero" id="home">
+        <header className="nav-shell">
+          <a className="brand" href="#home" aria-label="ColorRise Coatings home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png" alt="ColorRise Coatings" /></a>
+          <nav aria-label="Main navigation">
+            <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+          </nav>
+          <a className="nav-cta" href="#estimate">Free estimate <span>↗</span></a>
+        </header>
+        <div className="hero-copy">
+          <p className="eyebrow light">Professional painting • Built around you</p>
+          <h1>Color that<br />changes <em>everything.</em></h1>
+          <p className="hero-lede">Meticulous painting and coatings for homes that deserve to look—and feel—their best.</p>
+          <div className="hero-actions"><a className="button spectrum" href="#estimate">Get a free estimate <span>↗</span></a><a className="text-link" href="tel:+16025550148">(602) 555-0148</a></div>
+        </div>
+        <div className="hero-stamp"><b>4.9</b><span>★★★★★</span><small>Loved by local homeowners</small></div>
+        <a className="scroll" href="#about" aria-label="Scroll to about section">↓</a>
+      </section>
+
+      <section className="about section" id="about">
+        <div className="about-image image-panel" role="img" aria-label="Beautifully painted modern home interior" />
+        <div className="about-copy">
+          <p className="eyebrow">About ColorRise</p>
+          <h2>Painting is the final detail.<br /><em>We treat it like the first.</em></h2>
+          <p>Great painting is equal parts preparation, precision, and respect for your space. ColorRise brings all three—from the first walkthrough to the final clean line.</p>
+          <div className="metrics"><div><strong>100%</strong><span>detail obsessed</span></div><div><strong>4</strong><span>signature services</span></div></div>
+          <a className="button navy" href="#estimate">Meet your new painters <span>↗</span></a>
+        </div>
+      </section>
+
+      <section className="services section" id="services">
+        <div className="section-heading"><div><p className="eyebrow">What we do</p><h2>Coatings with <em>character.</em></h2></div><p>Thoughtful prep. Premium materials. A finish that looks exceptional from every angle.</p></div>
+        <div className="service-grid">{services.map((s) => <article className={`service-card ${s.cls}`} key={s.title}><span className="service-number">{s.n}</span><div><h3>{s.title}</h3><p>{s.text}</p></div><a href="#estimate" aria-label={`Ask about ${s.title}`}>↗</a></article>)}</div>
+      </section>
+
+      <section className="projects section" id="projects">
+        <div className="section-heading"><div><p className="eyebrow light">Selected work</p><h2>See what a fresh<br /><em>perspective</em> can do.</h2></div><p>Real transformations, made one careful coat at a time.</p></div>
+        <div className="project-grid">{projects.map((p) => <article className={`project-card ${p.cls}`} key={p.title}><div className="project-meta"><span>{p.tag}</span><h3>{p.title}</h3><b>↗</b></div></article>)}</div>
+      </section>
+
+      <section className="process section">
+        <div><p className="eyebrow">Our process</p><h2>Easy from hello<br />to <em>final walkthrough.</em></h2></div>
+        <ol><li><span>01</span><div><h3>Walkthrough & estimate</h3><p>We listen, measure, inspect, and build a clear scope for your project.</p></div></li><li><span>02</span><div><h3>Prep with purpose</h3><p>Surfaces are repaired, protected, cleaned, and primed for lasting results.</p></div></li><li><span>03</span><div><h3>Paint with precision</h3><p>Professional application, sharp lines, tidy spaces, and thoughtful updates.</p></div></li><li><span>04</span><div><h3>Walk it together</h3><p>We review every detail with you and leave your space beautifully finished.</p></div></li></ol>
+      </section>
+
+      <section className="testimonial section"><div className="quote-mark">“</div><blockquote>ColorRise didn’t just repaint our home. They made it feel <em>brand new</em>—and the whole process was remarkably easy.</blockquote><p>— A happy homeowner</p></section>
+
+      <section className="faq section"><div><p className="eyebrow">Good to know</p><h2>Your questions,<br /><em>covered.</em></h2><p className="faq-intro">Still wondering about something? We’re happy to talk through the details.</p><a className="text-link dark" href="#estimate">Ask us anything →</a></div><div>{faqs.map((f, i) => <details key={f[0]} open={i === 0}><summary>{f[0]}<span>+</span></summary><p>{f[1]}</p></details>)}</div></section>
+
+      <section className="estimate section" id="estimate"><div className="estimate-art"><p>Ready for a<br /><em>color rise?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Let’s get started</p><h2>Tell us about<br />your project.</h2><p>Share a few details and we’ll follow up to schedule your free, no-pressure estimate.</p><form><label><span>Name</span><input type="text" name="name" placeholder="Your name" /></label><label><span>Email</span><input type="email" name="email" placeholder="you@example.com" /></label><label><span>Phone</span><input type="tel" name="phone" placeholder="(000) 000-0000" /></label><label><span>Project type</span><select name="service" defaultValue=""><option value="" disabled>Select a service</option><option>Interior painting</option><option>Exterior painting</option><option>Cabinet refinishing</option><option>Epoxy floors</option></select></label><label className="full"><span>Tell us a little more</span><textarea name="message" placeholder="Project details, timing, address…" /></label><button className="button spectrum" type="submit">Request my estimate <span>↗</span></button></form></div></section>
+
+      <footer><a className="footer-brand" href="#home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png" alt="ColorRise Coatings" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} ColorRise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="#estimate">Contact</a></div></footer>
+    </main>
+  );
+}
