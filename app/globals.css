@@ -19,9 +19,9 @@
 @media(min-width:901px){
   .nav-shell{width:100%;margin-left:0;padding:0 34px;gap:36px;background:transparent;border-radius:0}
   .nav-shell:before{content:"";display:block;position:absolute;z-index:-1;inset:0 20%;height:90px;background:white;border:0;clip-path:polygon(7% 0,93% 0,86% 100%,14% 100%)}
-  .brand{position:static;flex:0 0 190px;width:190px;height:82px;margin-left:1%;padding:0;justify-content:flex-start;background:transparent;clip-path:none}
-  .brand img{width:150px;height:82px}
-  .nav-shell nav{flex:0 1 auto;gap:36px;margin-left:30px}
+  .brand{position:static;flex:0 0 92px;width:92px;height:82px;margin-left:24%;padding:0;justify-content:center;background:transparent;clip-path:none}
+  .brand img{width:80px;height:80px}
+  .nav-shell nav{flex:0 1 auto;gap:36px;margin-left:16px}
   .nav-cta{margin-left:auto}
 }
 
