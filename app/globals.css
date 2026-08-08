@@ -17,6 +17,8 @@
 .hero-mascot{position:absolute;z-index:2;right:5.5%;top:145px;width:min(38vw,520px);pointer-events:none;filter:drop-shadow(0 22px 35px rgba(3,17,45,.28))}
 .hero-mascot img{display:block;width:100%;height:auto}
 .faq-intro-column img{display:block;width:100%;height:280px;object-fit:cover;border-radius:10px;margin-top:42px}
+.estimate select option{color:var(--navy);background:white}
+.estimate select option:disabled{color:#68758a}
 .service-card:after{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(0deg,rgba(3,18,48,.92),rgba(3,18,48,.22)),var(--article-image);background-size:cover;background-position:center;opacity:0;transition:opacity .35s ease}
 .service-card:hover:after,.service-card:focus-within:after{opacity:1}
 .service-card>*{position:relative;z-index:1}
