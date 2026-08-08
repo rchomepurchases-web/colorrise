@@ -47,8 +47,9 @@ export default function Home() {
           <p className="eyebrow">About Color Rise</p>
           <h2>Painting is the final detail.<br /><em>We treat it like the first.</em></h2>
           <p>Great painting is equal parts preparation, precision, and respect for your space. Color Rise brings all three, from the first walkthrough to the final clean line.</p>
+          <p>We provide residential and commercial painting services throughout Phoenix, Tucson, Prescott, and surrounding Arizona communities. Our team handles interior painting, exterior painting, cabinet refinishing, and durable epoxy floor coatings.</p>
           <div className="metrics"><div><strong>100%</strong><span>detail obsessed</span></div><div><strong>4</strong><span>signature services</span></div></div>
-          <a className="button navy" href="#estimate">Meet your new painters <span>↗</span></a>
+          <a className="button navy" href="#estimate">Get a free estimate <span>↗</span></a>
         </div>
       </section>
 
