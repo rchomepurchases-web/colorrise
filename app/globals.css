@@ -15,4 +15,11 @@
 .brand{position:static;flex:0 0 92px;width:92px;height:74px;overflow:visible}
 .brand img{width:74px;height:74px}
 
+/* Folder-tab header: the navy logo panel and white links panel share one edge. */
+@media(min-width:901px){
+  .nav-shell{width:calc(100% - 300px);margin-left:300px;border-radius:0 0 20px 0}
+  .brand{position:absolute;left:-300px;top:0;width:300px;height:90px;padding-left:24px;justify-content:flex-start;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%)}
+  .brand img{width:78px;height:78px}
+}
+
 @media(max-width:900px){.section{padding:80px 24px}.nav-shell{margin-left:0;border-radius:0 0 16px 16px;padding:8px 18px}.nav-shell:before{display:none}.brand{position:static;width:74px;flex:1;justify-content:flex-start}.brand img{width:68px;height:68px}.nav-shell nav{display:none}.nav-cta{padding:14px}.hero{min-height:720px;margin:8px}.hero-copy{padding:110px 24px;width:100%}.hero-copy h1{font-size:64px}.hero-stamp{display:none}.about,.process,.faq,.estimate{grid-template-columns:1fr}.section-heading{display:block}.section-heading>p{margin-top:24px}.project-grid,.service-grid{grid-template-columns:1fr}.service-card:nth-child(odd){border-right:0}.image-panel{min-height:460px}.estimate-art{min-height:430px}footer{grid-template-columns:1fr}.footer-brand{width:150px;height:150px}}@media(max-width:560px){.hero-copy h1{font-size:52px}.hero-lede{font-size:17px}.hero-actions{align-items:flex-start;flex-direction:column}.nav-cta{font-size:0;gap:0}.nav-cta span{font-size:22px}.service-card{grid-template-columns:40px 1fr;min-height:280px}.service-card>a{grid-column:2}.project-card{height:390px}.estimate form{grid-template-columns:1fr}.estimate .full{grid-column:auto}.metrics div{padding-right:24px}.metrics div+div{padding-left:24px}.footer-links{flex-wrap:wrap}h2{font-size:44px}}
