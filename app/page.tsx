@@ -24,7 +24,7 @@ export default function Home() {
     <main>
       <section className="hero" id="home">
         <header className="nav-shell">
-          <a className="brand" href="#home" aria-label="Color Rise Coatings home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png" alt="Color Rise Coatings" /></a>
+          <a className="brand" href="#home" aria-label="Color Rise Coatings home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png?v=transparent-20260808" alt="Color Rise Coatings" /></a>
           <nav aria-label="Main navigation">
             <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
           </nav>
@@ -72,7 +72,7 @@ export default function Home() {
 
       <section className="estimate section" id="estimate"><div className="estimate-art"><p>Ready for a<br /><em>color rise?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Let’s get started</p><h2>Tell us about<br />your project.</h2><p>Share a few details and we’ll follow up to schedule your free, no-pressure estimate.</p><form action="https://formsubmit.co/rchomepurchases@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Color Rise quote request" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="https://colorrise-coatings.alacritycs.chatgpt.site/?submitted=true#estimate" /><label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label><label><span>Email</span><input type="email" name="email" placeholder="you@example.com" required /></label><label><span>Phone</span><input type="tel" name="phone" placeholder="(000) 000-0000" required /></label><label><span>Project type</span><select name="service" defaultValue="" required><option value="" disabled>Select a service</option><option>Interior painting</option><option>Exterior painting</option><option>Cabinet refinishing</option><option>Epoxy floors</option></select></label><label className="full"><span>Tell us a little more</span><textarea name="message" placeholder="Project details, timing, address…" required /></label><button className="button spectrum" type="submit">Request my estimate <span>↗</span></button></form></div></section>
 
-      <footer><a className="footer-brand" href="#home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png" alt="Color Rise Coatings" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="#estimate">Contact</a></div></footer>
+      <footer><a className="footer-brand" href="#home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png?v=transparent-20260808" alt="Color Rise Coatings" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="#estimate">Contact</a></div></footer>
     </main>
   );
 }
