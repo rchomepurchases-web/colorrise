@@ -6,7 +6,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ColorRise Coatings | Interior, Exterior, Cabinets & Epoxy",
+  title: "Color Rise Coatings | Interior, Exterior, Cabinets & Epoxy",
   description: "Professional painting and coatings with meticulous preparation and a finish made to last.",
   icons: { icon: "/Logo - Colorrise - Favicon.png", apple: "/Logo - Colorrise - Webclip.png" },
 };

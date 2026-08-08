@@ -24,7 +24,7 @@ export default function Home() {
     <main>
       <section className="hero" id="home">
         <header className="nav-shell">
-          <a className="brand" href="#home" aria-label="ColorRise Coatings home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png" alt="ColorRise Coatings" /></a>
+          <a className="brand" href="#home" aria-label="Color Rise Coatings home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png" alt="Color Rise Coatings" /></a>
           <nav aria-label="Main navigation">
             <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
           </nav>
@@ -43,9 +43,9 @@ export default function Home() {
       <section className="about section" id="about">
         <div className="about-image image-panel" role="img" aria-label="Beautifully painted modern home interior" />
         <div className="about-copy">
-          <p className="eyebrow">About ColorRise</p>
+          <p className="eyebrow">About Color Rise</p>
           <h2>Painting is the final detail.<br /><em>We treat it like the first.</em></h2>
-          <p>Great painting is equal parts preparation, precision, and respect for your space. ColorRise brings all three—from the first walkthrough to the final clean line.</p>
+          <p>Great painting is equal parts preparation, precision, and respect for your space. Color Rise brings all three—from the first walkthrough to the final clean line.</p>
           <div className="metrics"><div><strong>100%</strong><span>detail obsessed</span></div><div><strong>4</strong><span>signature services</span></div></div>
           <a className="button navy" href="#estimate">Meet your new painters <span>↗</span></a>
         </div>
@@ -66,13 +66,13 @@ export default function Home() {
         <ol><li><span>01</span><div><h3>Walkthrough & estimate</h3><p>We listen, measure, inspect, and build a clear scope for your project.</p></div></li><li><span>02</span><div><h3>Prep with purpose</h3><p>Surfaces are repaired, protected, cleaned, and primed for lasting results.</p></div></li><li><span>03</span><div><h3>Paint with precision</h3><p>Professional application, sharp lines, tidy spaces, and thoughtful updates.</p></div></li><li><span>04</span><div><h3>Walk it together</h3><p>We review every detail with you and leave your space beautifully finished.</p></div></li></ol>
       </section>
 
-      <section className="testimonial section"><div className="quote-mark">“</div><blockquote>ColorRise didn’t just repaint our home. They made it feel <em>brand new</em>—and the whole process was remarkably easy.</blockquote><p>— A happy homeowner</p></section>
+      <section className="testimonial section"><div className="quote-mark">“</div><blockquote>Color Rise didn’t just repaint our home. They made it feel <em>brand new</em>—and the whole process was remarkably easy.</blockquote><p>— A happy homeowner</p></section>
 
       <section className="faq section"><div><p className="eyebrow">Good to know</p><h2>Your questions,<br /><em>covered.</em></h2><p className="faq-intro">Still wondering about something? We’re happy to talk through the details.</p><a className="text-link dark" href="#estimate">Ask us anything →</a></div><div>{faqs.map((f, i) => <details key={f[0]} open={i === 0}><summary>{f[0]}<span>+</span></summary><p>{f[1]}</p></details>)}</div></section>
 
-      <section className="estimate section" id="estimate"><div className="estimate-art"><p>Ready for a<br /><em>color rise?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Let’s get started</p><h2>Tell us about<br />your project.</h2><p>Share a few details and we’ll follow up to schedule your free, no-pressure estimate.</p><form action="https://formsubmit.co/rchomepurchases@gmail.com" method="POST"><input type="hidden" name="_subject" value="New ColorRise quote request" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="https://colorrise-coatings.alacritycs.chatgpt.site/?submitted=true#estimate" /><label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label><label><span>Email</span><input type="email" name="email" placeholder="you@example.com" required /></label><label><span>Phone</span><input type="tel" name="phone" placeholder="(000) 000-0000" required /></label><label><span>Project type</span><select name="service" defaultValue="" required><option value="" disabled>Select a service</option><option>Interior painting</option><option>Exterior painting</option><option>Cabinet refinishing</option><option>Epoxy floors</option></select></label><label className="full"><span>Tell us a little more</span><textarea name="message" placeholder="Project details, timing, address…" required /></label><button className="button spectrum" type="submit">Request my estimate <span>↗</span></button></form></div></section>
+      <section className="estimate section" id="estimate"><div className="estimate-art"><p>Ready for a<br /><em>color rise?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Let’s get started</p><h2>Tell us about<br />your project.</h2><p>Share a few details and we’ll follow up to schedule your free, no-pressure estimate.</p><form action="https://formsubmit.co/rchomepurchases@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Color Rise quote request" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="https://colorrise-coatings.alacritycs.chatgpt.site/?submitted=true#estimate" /><label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label><label><span>Email</span><input type="email" name="email" placeholder="you@example.com" required /></label><label><span>Phone</span><input type="tel" name="phone" placeholder="(000) 000-0000" required /></label><label><span>Project type</span><select name="service" defaultValue="" required><option value="" disabled>Select a service</option><option>Interior painting</option><option>Exterior painting</option><option>Cabinet refinishing</option><option>Epoxy floors</option></select></label><label className="full"><span>Tell us a little more</span><textarea name="message" placeholder="Project details, timing, address…" required /></label><button className="button spectrum" type="submit">Request my estimate <span>↗</span></button></form></div></section>
 
-      <footer><a className="footer-brand" href="#home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png" alt="ColorRise Coatings" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} ColorRise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="#estimate">Contact</a></div></footer>
+      <footer><a className="footer-brand" href="#home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png" alt="Color Rise Coatings" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="#estimate">Contact</a></div></footer>
     </main>
   );
 }
