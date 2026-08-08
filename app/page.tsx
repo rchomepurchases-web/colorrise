@@ -1,4 +1,4 @@
-const services = [
+const journalArticles = [
   { n: "01", title: "Modern office spaces", text: "How thoughtful paint colors improve focus, reinforce your brand, and make contemporary workplaces feel better.", cls: "interior article-modern", href: "/blog/modern-office-spaces" },
   { n: "02", title: "Going bold: how to choose", text: "A practical guide to selecting statement colors with confidence, balance, and lasting appeal.", cls: "exterior article-bold", href: "/blog/going-bold-how-to-choose" },
   { n: "03", title: "The many shades of white", text: "Learn how undertones, natural light, and finish change the way white paint looks in your home.", cls: "cabinets article-white", href: "/blog/the-many-shades-of-white" },
@@ -53,14 +53,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="services section" id="services">
-        <div className="section-heading"><div><p className="eyebrow">Color journal</p><h2>Ideas with <em>character.</em></h2></div><p>Practical color guidance for homes and workplaces, written to help you make confident design decisions.</p></div>
-        <div className="service-grid">{services.map((s) => <article className={`service-card ${s.cls}`} key={s.title}><span className="service-number">{s.n}</span><div><h3>{s.title}</h3><p>{s.text}</p></div><a href={s.href} aria-label={`Read ${s.title}`}>↗</a></article>)}</div>
-      </section>
-
-      <section className="projects section" id="projects">
+      <section className="projects section" id="services">
         <div className="section-heading"><div><p className="eyebrow light">Selected work</p><h2>See what a fresh<br /><em>perspective</em> can do.</h2></div><p>Real transformations, made one careful coat at a time.</p></div>
         <div className="project-grid">{projects.map((p) => <article className={`project-card ${p.cls}`} key={p.title}><div className="project-meta"><span>{p.tag}</span><h3>{p.title}</h3><b>↗</b></div></article>)}</div>
+      </section>
+
+      <section className="services section journal-section" id="journal">
+        <div className="section-heading"><div><p className="eyebrow">Color journal</p><h2>Ideas with <em>character.</em></h2></div><p>Practical color guidance for homes and workplaces, written to help you make confident design decisions.</p></div>
+        <div className="service-grid">{journalArticles.map((s) => <article className={`service-card ${s.cls}`} key={s.title}><span className="service-number">{s.n}</span><div><h3>{s.title}</h3><p>{s.text}</p></div><a href={s.href} aria-label={`Read ${s.title}`}>↗</a></article>)}</div>
       </section>
 
       <section className="process section">
