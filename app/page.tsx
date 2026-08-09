@@ -41,6 +41,15 @@ export default function Home() {
         <a className="scroll" href="#about" aria-label="Scroll to about section">↓</a>
       </section>
 
+      <section className="service-ticker" aria-label="Color Rise services">
+        <div className="ticker-label">What we color</div>
+        <div className="ticker-window">
+          <div className="ticker-track">
+            {[0, 1].map((group) => <div className="ticker-group" aria-hidden={group === 1} key={group}><span>Interior</span><i className="dot orange" /><span>Exterior</span><i className="dot gold" /><span>Cabinets</span><i className="dot teal" /><span>Epoxy</span><i className="dot blue" /></div>)}
+          </div>
+        </div>
+      </section>
+
       <section className="about section" id="about">
         <div className="about-image image-panel" role="img" aria-label="Beautifully painted modern home interior" />
         <div className="about-copy">
