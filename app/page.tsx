@@ -37,7 +37,7 @@ export default function Home() {
           <div className="hero-actions"><a className="button spectrum" href="#estimate">Get a free estimate <span>↗</span></a><a className="text-link" href="tel:+16028156051">(602) 615-6051</a></div>
         </div>
         <div className="hero-mascot" aria-hidden="true"><img src="/mascot 1254 x 1254.png" alt="" /></div>
-        <div className="hero-stamp"><b>4.9</b><span>★★★★★</span><small>Loved by local homeowners</small></div>
+        <div className="hero-stamp financing-stamp"><b>Financing</b><span>Available</span><small>Ask about flexible payment options</small></div>
         <a className="scroll" href="#about" aria-label="Scroll to about section">↓</a>
       </section>
 
