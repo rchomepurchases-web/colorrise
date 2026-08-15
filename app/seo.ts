@@ -1,7 +1,7 @@
+import type { Metadata } from "next";
+
 const configuredUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ??
-  "colorrise.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://colorrisecoatings.com";
 
 export const siteUrl = configuredUrl.startsWith("http")
   ? configuredUrl.replace(/\/$/, "")
@@ -45,4 +45,3 @@ export function createArticleMetadata({
     },
   };
 }
-import type { Metadata } from "next";
