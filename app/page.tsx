@@ -104,7 +104,7 @@ export default function Home() {
 
       <section className="projects section" id="services">
         <div className="section-heading"><div><p className="eyebrow light">Selected work</p><h2>See what a fresh<br /><em>perspective</em> can do.</h2></div><p>Real transformations, made one careful coat at a time.</p></div>
-        <div className="project-grid">{projects.map((p) => <article className={`project-card ${p.cls}`} key={p.title}><div className="project-meta"><span>{p.tag}</span><h3>{p.title}</h3><b>↗</b></div></article>)}</div>
+        <div className="project-grid">{projects.map((p) => <article className={`project-card ${p.cls}`} key={p.title}><div className="project-meta"><span>{p.tag}</span><h3>{p.title}</h3></div></article>)}</div>
       </section>
 
       <section className="services section journal-section" id="journal">
