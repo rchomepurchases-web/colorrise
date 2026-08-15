@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import { ArticleShell } from "../ArticleShell";
+import { createArticleMetadata } from "../../seo";
 
-export const metadata: Metadata = {
-  title: "When to Use Dark Paint Colors in Your Home | Color Rise",
+export const metadata = createArticleMetadata({
+  title: "When to Use Dark Paint Colors in Your Home",
   description: "Discover the best rooms for dark paint colors and learn how lighting, trim, sheen, and furnishings can make deep colors feel dramatic instead of small.",
-};
+  path: "/blog/when-to-go-dark",
+  image: "/stefan-stefancik-pzA7QWNCIYg-unsplash.jpg",
+});
 
 export default function WhenToGoDark() {
-  return <ArticleShell title="When to go dark: a guide to deep, dramatic color" description="Dark paint can add depth, calm, and architectural definition. Used thoughtfully, it can make a room feel more intentional rather than simply smaller." category="Interior design strategy" image="/stefan-stefancik-pzA7QWNCIYg-unsplash.jpg" imageAlt="Dark sophisticated interior with deep painted walls">
+  return <ArticleShell title="When to go dark: a guide to deep, dramatic color" description="Dark paint can add depth, calm, and architectural definition. Used thoughtfully, it can make a room feel more intentional rather than simply smaller." category="Interior design strategy" image="/stefan-stefancik-pzA7QWNCIYg-unsplash.jpg" imageAlt="Dark sophisticated interior with deep painted walls" path="/blog/when-to-go-dark">
     <p className="article-lead">Charcoal, navy, forest green, chocolate brown, and near-black paint colors have become lasting design choices. They can create a sophisticated background, highlight craftsmanship, and change the perceived proportions of a room.</p>
     <h2>Small rooms can handle dark color</h2>
     <p>The idea that every small room must be painted white is limiting. A powder room, study, media room, or compact bedroom can feel more complete when deep color is used on every wall. Instead of fighting the room’s size, dark paint can create an intimate, enveloping effect.</p>

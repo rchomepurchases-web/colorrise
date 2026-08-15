@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import { ArticleShell } from "../ArticleShell";
+import { createArticleMetadata } from "../../seo";
 
-export const metadata: Metadata = {
-  title: "How to Choose Bold Paint Colors with Confidence | Color Rise",
+export const metadata = createArticleMetadata({
+  title: "How to Choose Bold Paint Colors with Confidence",
   description: "Learn how to choose bold paint colors, select the right accent wall, balance saturation, and test statement colors before painting your home.",
-};
+  path: "/blog/going-bold-how-to-choose",
+  image: "/david-pisnoy-46juD4zY1XA-unsplash.jpg",
+});
 
 export default function GoingBold() {
-  return <ArticleShell title="Going bold: how to choose a statement color" description="Bold paint can turn an ordinary room into a memorable one. The key is choosing a color that supports the space, the light, and the way you want the room to feel." category="Interior color guide" image="/david-pisnoy-46juD4zY1XA-unsplash.jpg" imageAlt="Painter preparing a wall for a bold statement color">
+  return <ArticleShell title="Going bold: how to choose a statement color" description="Bold paint can turn an ordinary room into a memorable one. The key is choosing a color that supports the space, the light, and the way you want the room to feel." category="Interior color guide" image="/david-pisnoy-46juD4zY1XA-unsplash.jpg" imageAlt="Painter preparing a wall for a bold statement color" path="/blog/going-bold-how-to-choose">
     <p className="article-lead">A bold wall color does not have to feel risky. With a clear plan, deep green, saturated blue, burnt orange, rich plum, and even vivid yellow can feel sophisticated and personal. Good bold color choices begin with context, not a tiny paint chip.</p>
     <h2>Define the mood before selecting the hue</h2>
     <p>Start by describing how you want the room to feel. Deep blues and greens often feel grounded and restorative. Warm reds, terracotta tones, and ochres create energy and intimacy. Jewel tones can feel polished and dramatic, while bright clear colors feel playful and modern.</p>

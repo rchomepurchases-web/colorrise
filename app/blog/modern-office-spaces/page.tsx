@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import { ArticleShell } from "../ArticleShell";
+import { createArticleMetadata } from "../../seo";
 
-export const metadata: Metadata = {
-  title: "Modern Office Paint Colors for Productive Workspaces | Color Rise",
+export const metadata = createArticleMetadata({
+  title: "Modern Office Paint Colors for Productive Workspaces",
   description: "Discover how modern office paint colors can improve focus, support your brand, and create a more welcoming workplace for employees and clients.",
-};
+  path: "/blog/modern-office-spaces",
+  image: "/slidebean-TpGIpUF67po-unsplash.jpg",
+});
 
 export default function ModernOfficeSpaces() {
-  return <ArticleShell title="Modern office spaces: color that works as hard as you do" description="A modern workplace needs more than stylish furniture. The right office paint colors can support focus, communicate your brand, and help people feel comfortable throughout the workday." category="Commercial painting guide" image="/slidebean-TpGIpUF67po-unsplash.jpg" imageAlt="Modern collaborative office with contemporary paint colors">
+  return <ArticleShell title="Modern office spaces: color that works as hard as you do" description="A modern workplace needs more than stylish furniture. The right office paint colors can support focus, communicate your brand, and help people feel comfortable throughout the workday." category="Commercial painting guide" image="/slidebean-TpGIpUF67po-unsplash.jpg" imageAlt="Modern collaborative office with contemporary paint colors" path="/blog/modern-office-spaces">
     <p className="article-lead">Office design has changed. Today’s best workspaces balance collaboration, concentration, flexibility, and a strong sense of identity. Paint is one of the most efficient ways to create that balance because it shapes how a room feels before a single desk or screen is added.</p>
     <h2>Start with the way each space is used</h2>
     <p>A productive office color plan begins with function. Quiet work areas benefit from calm, low-saturation colors such as soft blue, misty green, warm gray, or muted clay. These colors add character without demanding attention. Collaborative zones can carry more energy through richer accents, brighter neutrals, or a confident brand color.</p>

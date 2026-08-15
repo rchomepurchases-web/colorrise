@@ -1,3 +1,5 @@
+import { businessEmail, businessName, businessPhone, safeJsonLd, siteUrl } from "./seo";
+
 const journalArticles = [
   { n: "01", title: "Modern office spaces", text: "How thoughtful paint colors improve focus, reinforce your brand, and make contemporary workplaces feel better.", cls: "interior article-modern", href: "/blog/modern-office-spaces" },
   { n: "02", title: "Going bold: how to choose", text: "A practical guide to selecting statement colors with confidence, balance, and lasting appeal.", cls: "exterior article-bold", href: "/blog/going-bold-how-to-choose" },
@@ -20,8 +22,46 @@ const faqs = [
 ];
 
 export default function Home() {
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "HousePainter"],
+    "@id": `${siteUrl}/#business`,
+    name: businessName,
+    url: siteUrl,
+    logo: `${siteUrl}/Logo - Colorrise - Trans (1080 x 1080 px).png`,
+    image: `${siteUrl}/callum-hill-jo4CWjIw4Wc-unsplash.jpg`,
+    telephone: businessPhone,
+    email: businessEmail,
+    priceRange: "$$",
+    areaServed: [
+      { "@type": "City", name: "Phoenix", containedInPlace: { "@type": "State", name: "Arizona" } },
+      { "@type": "City", name: "Tucson", containedInPlace: { "@type": "State", name: "Arizona" } },
+      { "@type": "City", name: "Prescott", containedInPlace: { "@type": "State", name: "Arizona" } },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Painting and coating services",
+      itemListElement: ["Interior Painting", "Exterior Painting", "Cabinet Refinishing", "Epoxy Floor Coatings"].map((name) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name },
+      })),
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text },
+    })),
+  };
+
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(localBusinessJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqJsonLd) }} />
       <section className="hero" id="home">
         <header className="nav-shell">
           <a className="brand" href="#home" aria-label="Color Rise Coatings home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png?v=transparent-20260808" alt="Color Rise Coatings" /></a>

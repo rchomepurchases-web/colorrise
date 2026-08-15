@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { businessName, safeJsonLd, siteUrl } from "../seo";
 
 type ArticleShellProps = {
   title: string;
@@ -7,12 +8,29 @@ type ArticleShellProps = {
   category: string;
   image: string;
   imageAlt: string;
+  path: string;
   children: ReactNode;
 };
 
-export function ArticleShell({ title, description, category, image, imageAlt, children }: ArticleShellProps) {
+export function ArticleShell({ title, description, category, image, imageAlt, path, children }: ArticleShellProps) {
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    image: `${siteUrl}${image}`,
+    mainEntityOfPage: `${siteUrl}${path}`,
+    author: { "@type": "Organization", name: businessName, url: siteUrl },
+    publisher: {
+      "@type": "Organization",
+      name: businessName,
+      logo: { "@type": "ImageObject", url: `${siteUrl}/Logo - Colorrise - Trans (1080 x 1080 px).png` },
+    },
+  };
+
   return (
     <main className="article-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(articleJsonLd) }} />
       <header className="article-nav">
         <Link href="/" className="article-logo"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png?v=transparent-20260808" alt="Color Rise Coatings" /></Link>
         <nav aria-label="Article navigation"><Link href="/#services">Color journal</Link><Link href="/#about">About</Link><Link href="/#estimate" className="article-nav-cta">Free estimate</Link></nav>

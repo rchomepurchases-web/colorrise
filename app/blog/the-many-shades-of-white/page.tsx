@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import { ArticleShell } from "../ArticleShell";
+import { createArticleMetadata } from "../../seo";
 
-export const metadata: Metadata = {
-  title: "How to Choose the Right White Paint Color | Color Rise",
+export const metadata = createArticleMetadata({
+  title: "How to Choose the Right White Paint Color",
   description: "Compare warm white, cool white, and neutral white paint. Learn how undertones, lighting, trim, and sheen affect the right white for every room.",
-};
+  path: "/blog/the-many-shades-of-white",
+  image: "/collov-home-design-H-1j_s0dhCw-unsplash.jpg",
+});
 
 export default function ShadesOfWhite() {
-  return <ArticleShell title="The many shades of white: finding the right one" description="White paint is never just white. Undertones, daylight, surrounding materials, and finish can make one shade feel crisp and another feel soft, warm, or unexpectedly gray." category="Paint color fundamentals" image="/collov-home-design-H-1j_s0dhCw-unsplash.jpg" imageAlt="Bright interior showing carefully selected white paint and natural light">
+  return <ArticleShell title="The many shades of white: finding the right one" description="White paint is never just white. Undertones, daylight, surrounding materials, and finish can make one shade feel crisp and another feel soft, warm, or unexpectedly gray." category="Paint color fundamentals" image="/collov-home-design-H-1j_s0dhCw-unsplash.jpg" imageAlt="Bright interior showing carefully selected white paint and natural light" path="/blog/the-many-shades-of-white">
     <p className="article-lead">White remains one of the most popular interior paint colors because it is flexible, bright, and timeless. It is also one of the easiest colors to get wrong. Understanding undertones is the first step toward choosing a white that belongs in your home.</p>
     <h2>Warm white paint</h2>
     <p>Warm whites contain subtle yellow, cream, beige, or red undertones. They pair naturally with warm wood, brass, natural stone, traditional finishes, and rooms with soft afternoon light. A warm white can make a large room feel more comfortable and keep a north-facing room from feeling cold.</p>
