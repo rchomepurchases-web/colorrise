@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
           <p>You may contact us to request access to, correction of, or deletion of personal information we maintain about you, subject to applicable legal and recordkeeping requirements.</p>
 
           <h2>Contact us</h2>
-          <p>For privacy questions or requests, contact Color Rise Coatings at <a href="mailto:rchomepurchases@gmail.com">rchomepurchases@gmail.com</a> or <a href="tel:+16026156051">(602) 615-6051</a>.</p>
+          <p>For privacy questions or requests, contact Color Rise Coatings at <a href="mailto:rc@colorrisecoatings.com">rc@colorrisecoatings.com</a> or <a href="tel:+16026156051">(602) 615-6051</a>.</p>
         </div>
       </article>
       <footer className="article-footer"><span>© {new Date().getFullYear()} Color Rise Coatings</span><Link href="/">Back to home</Link></footer>
