@@ -1,4 +1,4 @@
-import { businessEmail, businessName, businessPhone, safeJsonLd, siteUrl } from "./seo";
+<option>Interior</option><option>Exterior</option><option>Cabinets</option><option>Epoxy</option>import { businessEmail, businessName, businessPhone, safeJsonLd, siteUrl } from "./seo";
 
 const journalArticles = [
   { n: "01", title: "Modern office spaces", text: "How thoughtful paint colors improve focus, reinforce your brand, and make contemporary workplaces feel better.", cls: "interior article-modern", href: "/blog/modern-office-spaces" },
