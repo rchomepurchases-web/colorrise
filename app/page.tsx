@@ -67,7 +67,7 @@ export default function Home() {
         <header className="nav-shell">
           <a className="brand" href="#home" aria-label="Color Rise Coatings home"><img src="/Logo - Colorrise - Trans (1080 x 1080 px).png?v=transparent-20260808" alt="Color Rise Coatings" /></a>
           <nav aria-label="Main navigation">
-            <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+            <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="/service-areas">Service Areas</a>
           </nav>
           <a className="nav-cta" href="#estimate">Free estimate <span>↗</span></a>
         </header>
@@ -132,7 +132,7 @@ export default function Home() {
 
       <section className="estimate section" id="estimate"><div className="estimate-art"><p>Ready for a<br /><em>color rise?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Free, no-pressure estimate</p><h2>Tell us about<br />your project.</h2><p>Share the details below. We’ll contact you to discuss the scope and schedule an on-site estimate.</p><LeadForm /></div></section>
 
-      <footer><a className="footer-brand" href="#home"><img src="/mascot 1254 x 1254.png" alt="Color Rise Coatings mascot" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="/services/commercial-painting">Commercial</a><a href="#estimate">Contact</a><a href="/privacy-policy">Privacy Policy</a></div></footer>
+      <footer><a className="footer-brand" href="#home"><img src="/mascot 1254 x 1254.png" alt="Color Rise Coatings mascot" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="/service-areas">Service Areas</a><a href="/services/commercial-painting">Commercial</a><a href="#estimate">Contact</a><a href="/privacy-policy">Privacy Policy</a></div></footer>
     </main>
   );
 }
