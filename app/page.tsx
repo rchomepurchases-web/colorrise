@@ -72,8 +72,8 @@ export default function Home() {
         </header>
         <div className="hero-copy">
           <p className="eyebrow light">Professional painting • Built around you</p>
-          <h1>Color that<br />changes <em>everything.</em></h1>
-          <p className="hero-lede">Meticulous painting and coatings for residential and commercial buildings that deserve to look and feel their best.</p>
+          <h1>Arizona Painting and Coating<br />Done to a <em>Higher Standard</em></h1>
+          <p className="hero-lede">A Higher Standard of Painting</p>
           <div className="hero-actions"><a className="button spectrum" href="#estimate">Get a free estimate <span>↗</span></a><a className="text-link" href="tel:+16028156051">(602) 615-6051</a></div>
         </div>
         <div className="hero-mascot" aria-hidden="true"><img src="/mascot 1254 x 1254.png" alt="" /></div>
