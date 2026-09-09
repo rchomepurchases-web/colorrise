@@ -1,4 +1,5 @@
 import { businessEmail, businessName, businessPhone, safeJsonLd, siteUrl } from "./seo";
+import LeadForm from "./LeadForm";
 
 const journalArticles = [
   { n: "01", title: "Modern office spaces", text: "How thoughtful paint colors improve focus, reinforce your brand, and make contemporary workplaces feel better.", cls: "interior article-modern", href: "/blog/modern-office-spaces" },
@@ -8,10 +9,10 @@ const journalArticles = [
 ];
 
 const projects = [
-  { title: "Warm, modern interior", tag: "Interior", cls: "project-one" },
-  { title: "A brighter first impression", tag: "Exterior", cls: "project-two" },
-  { title: "Kitchen, completely refreshed", tag: "Cabinets", cls: "project-three" },
-  { title: "Garage built to perform", tag: "Epoxy", cls: "project-four" },
+  { title: "Interior painting", tag: "Homes & living spaces", cls: "project-one", href: "/services/interior-painting" },
+  { title: "Exterior painting", tag: "Built for Arizona", cls: "project-two", href: "/services/exterior-painting" },
+  { title: "Cabinet refinishing", tag: "Kitchens & built-ins", cls: "project-three", href: "/services/cabinet-refinishing" },
+  { title: "Epoxy floor coatings", tag: "Garages & concrete", cls: "project-four", href: "/services/epoxy-floor-coatings" },
 ];
 
 const faqs = [
@@ -74,7 +75,7 @@ export default function Home() {
           <p className="eyebrow light">Professional painting • Built around you</p>
           <h1>Arizona Painting and Coating<br />Done to a <em>Higher Standard</em></h1>
           <p className="hero-lede">A Higher Standard of Painting</p>
-          <div className="hero-actions"><a className="button spectrum" href="#estimate">Get a free estimate <span>↗</span></a><a className="text-link" href="tel:+16028156051">(602) 615-6051</a></div>
+          <div className="hero-actions"><a className="button spectrum" href="#estimate" data-track="hero-estimate">Get a free estimate <span>↗</span></a><a className="text-link" href="tel:+16026156051" data-track="hero-call">(602) 615-6051</a></div>
         </div>
         <div className="hero-mascot" aria-hidden="true"><img src="/mascot 1254 x 1254.png" alt="" /></div>
         <div className="hero-stamp financing-stamp"><b>24 Months</b><span>0% Financing</span><small>Available on approved credit. Terms apply.</small></div>
@@ -95,6 +96,8 @@ export default function Home() {
         <div><strong>Sherwin-Williams</strong><span aria-hidden="true" /> <strong>Dunn-Edwards</strong></div>
       </section>
 
+      <section className="trust-strip" aria-label="What customers can expect"><div><strong>Free, no-pressure estimates</strong><span>A clear conversation about your project and priorities.</span></div><div><strong>Written project scope</strong><span>Included surfaces and preparation documented before work begins.</span></div><div><strong>Careful preparation</strong><span>Protection and coating systems matched to your property.</span></div><div><strong>Final walkthrough</strong><span>Review the completed scope together before closeout.</span></div></section>
+
       <section className="about section" id="about">
         <div className="about-image image-panel" role="img" aria-label="Beautifully painted modern home interior" />
         <div className="about-copy">
@@ -108,8 +111,9 @@ export default function Home() {
       </section>
 
       <section className="projects section" id="services">
-        <div className="section-heading"><div><p className="eyebrow light">Selected work</p><h2>See what a fresh<br /><em>perspective</em> can do.</h2></div><p>Real transformations, made one careful coat at a time.</p></div>
-        <div className="project-grid">{projects.map((p) => <article className={`project-card ${p.cls}`} key={p.title}><div className="project-meta"><span>{p.tag}</span><h3>{p.title}</h3></div></article>)}</div>
+        <div className="section-heading"><div><p className="eyebrow light">Painting services</p><h2>The right process<br />for <em>every surface.</em></h2></div><p>Explore the preparation, products, and process behind each Color Rise service.</p></div>
+        <div className="project-grid">{projects.map((p) => <a className={`project-card ${p.cls}`} href={p.href} key={p.title} data-track={`service-${p.href.split("/").pop()}`}><div className="project-meta"><span>{p.tag}</span><h3>{p.title} <small>↗</small></h3></div></a>)}</div>
+        <div className="commercial-service-link"><div><p className="eyebrow light">Commercial properties</p><h3>Painting planned around your property and operations.</h3></div><a className="button spectrum" href="/services/commercial-painting" data-track="service-commercial-painting">Explore commercial painting <span>↗</span></a></div>
       </section>
 
       <section className="services section journal-section" id="journal">
@@ -122,13 +126,13 @@ export default function Home() {
         <ol><li><span>01</span><div><h3>Walkthrough & estimate</h3><p>We listen, measure, inspect, and build a clear scope for your project.</p></div></li><li><span>02</span><div><h3>Prep with purpose</h3><p>Surfaces are repaired, protected, cleaned, and primed for lasting results.</p></div></li><li><span>03</span><div><h3>Paint with precision</h3><p>Professional application, sharp lines, tidy spaces, and thoughtful updates.</p></div></li><li><span>04</span><div><h3>Walk it together</h3><p>We review every detail with you and leave your space beautifully finished.</p></div></li></ol>
       </section>
 
-      <section className="testimonial section"><div className="quote-mark">“</div><blockquote>Color Rise didn’t just repaint our home. They made it feel <em>brand new</em>, and the whole process was remarkably easy.</blockquote><p>~ Lisa Q. | Peoria, AZ</p></section>
+      <section className="testimonial section trust-promise"><p className="eyebrow light">The Color Rise standard</p><blockquote>Clear scope. Careful preparation.<br /><em>A finish worth coming home to.</em></blockquote><p>No inflated review counts. No vague promises. Just a professional process you can evaluate before work begins.</p><a className="button spectrum" href="#estimate" data-track="standard-estimate">Plan my estimate <span>↗</span></a></section>
 
       <section className="faq section"><div className="faq-intro-column"><p className="eyebrow">Good to know</p><h2>Your questions,<br /><em>covered.</em></h2><p className="faq-intro">Still wondering about something? We’re happy to talk through the details.</p><a className="text-link dark" href="#estimate">Ask us anything →</a><img src="/helena-lopes-KBuWq5B6R9E-unsplash.jpg" alt="Color Rise team discussing project details" /></div><div>{faqs.map((f, i) => <details key={f[0]} open={i === 0}><summary>{f[0]}<span>+</span></summary><p>{f[1]}</p></details>)}</div></section>
 
-      <section className="estimate section" id="estimate"><div className="estimate-art"><p>Ready for a<br /><em>color rise?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Let’s get started</p><h2>Tell us about<br />your project.</h2><p>Share a few details and we’ll follow up to schedule your free, no-pressure estimate.</p><form action="https://formsubmit.co/rchomepurchases@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Color Rise quote request" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="https://colorrise-coatings.alacritycs.chatgpt.site/?submitted=true#estimate" /><label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label><label><span>Email</span><input type="email" name="email" placeholder="you@example.com" required /></label><label><span>Phone</span><input type="tel" name="phone" placeholder="(000) 000-0000" required /></label><label><span>Project type</span><select name="service" defaultValue="" required><option value="" disabled>Select a service</option><option>Interior</option><option>Exterior</option><option>Cabinets</option><option>Epoxy</option></select></label><label className="full"><span>Tell us a little more</span><textarea name="message" placeholder="Project details, timing, address…" required /></label><button className="button spectrum" type="submit">Request my estimate <span>↗</span></button></form></div></section>
+      <section className="estimate section" id="estimate"><div className="estimate-art"><p>Ready for a<br /><em>color rise?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Free, no-pressure estimate</p><h2>Tell us about<br />your project.</h2><p>Share the details below. We’ll contact you to discuss the scope and schedule an on-site estimate.</p><LeadForm /></div></section>
 
-      <footer><a className="footer-brand" href="#home"><img src="/mascot 1254 x 1254.png" alt="Color Rise Coatings mascot" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="#estimate">Contact</a><a href="/privacy-policy">Privacy Policy</a></div></footer>
+      <footer><a className="footer-brand" href="#home"><img src="/mascot 1254 x 1254.png" alt="Color Rise Coatings mascot" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="/services/commercial-painting">Commercial</a><a href="#estimate">Contact</a><a href="/privacy-policy">Privacy Policy</a></div></footer>
     </main>
   );
 }
