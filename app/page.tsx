@@ -72,7 +72,7 @@ export default function Home() {
           <a className="nav-cta" href="#estimate">Free estimate <span>↗</span></a>
         </header>
         <div className="hero-copy">
-          <p className="eyebrow light">Professional painting • Built around you</p>
+          <p className="eyebrow light">Residential &amp; Commercial Painting</p>
           <h1>Arizona Painting and Coating<br />Done to a <em>Higher Standard</em></h1>
           <p className="hero-lede">A Higher Standard of Painting</p>
           <div className="hero-actions"><a className="button spectrum" href="#estimate" data-track="hero-estimate">Get a free estimate <span>↗</span></a><a className="text-link" href="tel:+16026156051" data-track="hero-call">(602) 615-6051</a></div>
