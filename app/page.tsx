@@ -77,7 +77,7 @@ export default function Home() {
           <div className="hero-actions"><a className="button spectrum" href="#estimate">Get a free estimate <span>↗</span></a><a className="text-link" href="tel:+16028156051">(602) 615-6051</a></div>
         </div>
         <div className="hero-mascot" aria-hidden="true"><img src="/mascot 1254 x 1254.png" alt="" /></div>
-        <div className="hero-stamp financing-stamp"><b>Financing</b><span>Available</span><small>Ask about flexible payment options</small></div>
+        <div className="hero-stamp financing-stamp"><b>24 Months</b><span>0% Financing</span><small>Available on approved credit. Terms apply.</small></div>
         <a className="scroll" href="#about" aria-label="Scroll to about section">↓</a>
       </section>
 
@@ -88,6 +88,11 @@ export default function Home() {
             {[0, 1].map((group) => <div className="ticker-group" aria-hidden={group === 1} key={group}><span>Interior</span><i className="dot orange" /><span>Exterior</span><i className="dot gold" /><span>Cabinets</span><i className="dot teal" /><span>Epoxy</span><i className="dot blue" /></div>)}
           </div>
         </div>
+      </section>
+
+      <section className="paint-brands" aria-label="Professional paint brands">
+        <p>Professional coatings from brands homeowners trust</p>
+        <div><strong>Sherwin-Williams</strong><span aria-hidden="true" /> <strong>Dunn-Edwards</strong></div>
       </section>
 
       <section className="about section" id="about">
@@ -123,7 +128,7 @@ export default function Home() {
 
       <section className="estimate section" id="estimate"><div className="estimate-art"><p>Ready for a<br /><em>color rise?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Let’s get started</p><h2>Tell us about<br />your project.</h2><p>Share a few details and we’ll follow up to schedule your free, no-pressure estimate.</p><form action="https://formsubmit.co/rchomepurchases@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Color Rise quote request" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="https://colorrise-coatings.alacritycs.chatgpt.site/?submitted=true#estimate" /><label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label><label><span>Email</span><input type="email" name="email" placeholder="you@example.com" required /></label><label><span>Phone</span><input type="tel" name="phone" placeholder="(000) 000-0000" required /></label><label><span>Project type</span><select name="service" defaultValue="" required><option value="" disabled>Select a service</option><option>Interior</option><option>Exterior</option><option>Cabinets</option><option>Epoxy</option></select></label><label className="full"><span>Tell us a little more</span><textarea name="message" placeholder="Project details, timing, address…" required /></label><button className="button spectrum" type="submit">Request my estimate <span>↗</span></button></form></div></section>
 
-      <footer><a className="footer-brand" href="#home"><img src="/mascot 1254 x 1254.png" alt="Color Rise Coatings mascot" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="#estimate">Contact</a></div></footer>
+      <footer><a className="footer-brand" href="#home"><img src="/mascot 1254 x 1254.png" alt="Color Rise Coatings mascot" /></a><div><p>Interior <i /> Exterior <i /> Cabinets <i /> Epoxy</p><small>© {new Date().getFullYear()} Color Rise Coatings. All rights reserved.</small></div><div className="footer-links"><a href="#services">Services</a><a href="#estimate">Contact</a><a href="/privacy-policy">Privacy Policy</a></div></footer>
     </main>
   );
 }
