@@ -9,7 +9,7 @@ export const siteUrl = configuredUrl.startsWith("http")
 
 export const businessName = "Color Rise Coatings";
 export const businessPhone = "+1-602-615-6051";
-export const businessEmail = "rchomepurchases@gmail.com";
+export const businessEmail = "rc@colorrisecoatings.com";
 
 export function safeJsonLd(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");

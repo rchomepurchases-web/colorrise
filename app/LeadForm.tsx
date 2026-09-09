@@ -24,7 +24,7 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
   }
 
   return (
-    <form ref={formRef} action="https://formsubmit.co/rchomepurchases@gmail.com" method="POST" onSubmit={trackSubmit} data-lead-form="estimate_request">
+    <form ref={formRef} action="https://formsubmit.co/rc@colorrisecoatings.com" method="POST" onSubmit={trackSubmit} data-lead-form="estimate_request">
       <input type="hidden" name="_subject" value="New Color Rise estimate request" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
