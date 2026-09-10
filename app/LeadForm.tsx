@@ -18,17 +18,27 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
   }, []);
 
   function trackSubmit() {
-    const dataLayer = (window as typeof window & { dataLayer?: Record<string, unknown>[] }).dataLayer ?? [];
-    dataLayer.push({ event: "generate_lead", form_name: "estimate_request", service: defaultService || "not_selected" });
-    (window as typeof window & { dataLayer?: Record<string, unknown>[] }).dataLayer = dataLayer;
+    const form = formRef.current;
+    if (!form) return;
+
+    const formData = new FormData(form);
+    const attribution = Object.fromEntries(
+      trackingKeys.map((key) => [key, String(formData.get(key) ?? "")]),
+    );
+
+    sessionStorage.setItem("colorRiseLeadContext", JSON.stringify({
+      service: String(formData.get("service_type") ?? defaultService ?? "not_selected"),
+      ...attribution,
+    }));
   }
 
   return (
     <form ref={formRef} action="https://formsubmit.co/rc@colorrisecoatings.com" method="POST" onSubmit={trackSubmit} data-lead-form="estimate_request">
       <input type="hidden" name="_subject" value="New Color Rise estimate request" />
       <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://colorrisecoatings.com/?submitted=true#estimate" />
+      <input type="hidden" name="_captcha" value="true" />
+      <input type="hidden" name="_next" value="https://colorrisecoatings.com/thank-you" />
+      <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="form-honeypot" aria-hidden="true" />
       <input type="hidden" name="lead_source" value="Website" />
       <input type="hidden" name="landing_page" defaultValue="" />
       {trackingKeys.map((key) => <input key={key} type="hidden" name={key} defaultValue="" />)}

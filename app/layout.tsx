@@ -10,10 +10,10 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Color Rise Coatings | Arizona Painting Contractors",
+    default: "Painting Contractor in Phoenix, AZ | Color Rise Coatings",
     template: "%s | Color Rise Coatings",
   },
-  description: "Professional interior painting, exterior painting, cabinet refinishing, and epoxy floor coatings serving Phoenix, Tucson, Prescott, and surrounding Arizona communities.",
+  description: "Professional interior and exterior painting, cabinet refinishing, commercial painting, and epoxy floor coatings serving Phoenix and communities across Arizona.",
   applicationName: businessName,
   keywords: [
     "Arizona painting contractor",
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: businessName,
-    title: "Color Rise Coatings | Arizona Painting Contractors",
-    description: "Interior, exterior, cabinet, and epoxy painting services across Phoenix, Tucson, Prescott, and surrounding Arizona communities.",
+    title: "Painting Contractor in Phoenix, AZ | Color Rise Coatings",
+    description: "Interior and exterior painting, cabinet refinishing, commercial painting, and epoxy floor coatings serving Phoenix and communities across Arizona.",
     images: [{ url: "/Logo - Colorrise - Trans (1080 x 1080 px).png", width: 1080, height: 1080, alt: businessName }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Color Rise Coatings | Arizona Painting Contractors",
-    description: "Interior, exterior, cabinet, and epoxy painting services across Arizona.",
+    title: "Painting Contractor in Phoenix, AZ | Color Rise Coatings",
+    description: "Interior and exterior painting, cabinet refinishing, commercial painting, and epoxy floor coatings serving Phoenix and communities across Arizona.",
     images: ["/Logo - Colorrise - Trans (1080 x 1080 px).png"],
   },
   robots: { index: true, follow: true },
