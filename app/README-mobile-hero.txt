@@ -1,1 +1,0 @@
-Mobile hero hierarchy refinement: balances headline, CTA, financing offer, and mascot without changing desktop presentation.
