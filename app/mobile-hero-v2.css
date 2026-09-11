@@ -1,0 +1,138 @@
+/* Refined mobile hero hierarchy. Loaded after globals/mobile-fixes. */
+@media (max-width: 900px) {
+  .hero {
+    min-height: 860px;
+    background-position: center top;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 720px;
+    padding: 92px 24px 330px;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .hero-copy h1 {
+    max-width: 640px;
+    margin-bottom: 22px;
+    line-height: .94;
+  }
+
+  .hero-lede {
+    max-width: 470px;
+    margin-bottom: 0;
+  }
+
+  .hero-actions {
+    margin-top: 28px;
+    gap: 20px;
+  }
+
+  .hero-actions .button {
+    box-shadow: 0 12px 28px rgba(3, 17, 45, .22);
+  }
+
+  .hero-stamp.financing-stamp {
+    display: grid !important;
+    left: 24px;
+    right: auto;
+    bottom: 178px;
+    min-width: 0;
+    width: min(330px, 48vw);
+    padding: 14px 16px;
+    gap: 2px 10px;
+    border-left-width: 3px;
+    border-radius: 8px;
+    background: rgba(7, 26, 61, .9);
+  }
+
+  .hero-stamp.financing-stamp b,
+  .hero-stamp.financing-stamp span {
+    font-size: 20px;
+    line-height: 1.05;
+  }
+
+  .hero-stamp.financing-stamp span {
+    letter-spacing: .04em;
+  }
+
+  .hero-stamp.financing-stamp small {
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .hero-mascot {
+    display: block !important;
+    top: auto;
+    right: 14px;
+    bottom: 34px;
+    width: clamp(170px, 36vw, 235px);
+    max-width: 44%;
+  }
+
+  .scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: 900px;
+  }
+
+  .hero-copy {
+    padding: 84px 20px 360px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(42px, 12vw, 50px);
+    line-height: .96;
+    letter-spacing: -.055em;
+  }
+
+  .hero-lede {
+    font-size: 16px;
+    max-width: 330px;
+  }
+
+  .hero-actions {
+    width: min(100%, 360px);
+    gap: 14px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-actions .text-link {
+    width: max-content;
+  }
+
+  .hero-stamp.financing-stamp {
+    left: 18px;
+    bottom: 188px;
+    width: min(245px, 61vw);
+    padding: 12px 14px;
+  }
+
+  .hero-stamp.financing-stamp b,
+  .hero-stamp.financing-stamp span {
+    font-size: 17px;
+  }
+
+  .hero-stamp.financing-stamp small {
+    font-size: 9px;
+  }
+
+  .hero-mascot {
+    right: 4px;
+    bottom: 26px;
+    width: clamp(165px, 45vw, 205px);
+    max-width: 48%;
+  }
+}
