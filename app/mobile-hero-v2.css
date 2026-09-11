@@ -46,9 +46,10 @@
     display: block;
     width: 100%;
     margin-top: 2px;
-    font-size: 12px;
-    line-height: 1.4;
-    color: rgba(255,255,255,.88);
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: rgba(255,255,255,.95);
   }
 
   .hero-mascot {
@@ -102,7 +103,9 @@
 
   .hero-actions::after {
     max-width: 320px;
-    font-size: 11px;
+    font-size: 13px;
+    line-height: 1.35;
+    font-weight: 700;
   }
 
   .hero-mascot {
