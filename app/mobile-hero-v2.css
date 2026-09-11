@@ -1,14 +1,14 @@
 /* Stable mobile hero composition. Loaded after globals/mobile-fixes. */
 @media (max-width: 900px) {
   .hero {
-    min-height: 820px;
+    min-height: 780px;
     background-position: center top;
   }
 
   .hero-copy {
     width: 100%;
     max-width: 720px;
-    padding: 88px 24px 285px;
+    padding: 88px 24px 250px;
   }
 
   .hero-copy .eyebrow {
@@ -29,47 +29,33 @@
   .hero-actions {
     margin-top: 24px;
     gap: 16px;
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .hero-actions .button {
     box-shadow: 0 10px 24px rgba(3, 17, 45, .2);
   }
 
-  /* Hide the absolute-positioned desktop financing stamp on mobile. */
+  /* Hide the large desktop-style financing panel on mobile. */
   .hero-stamp.financing-stamp {
     display: none !important;
   }
 
-  /* Use a compact, full-width financing card in normal flow to avoid overflow/clipping. */
+  /* Keep financing visible as a compact line under the primary CTA. */
   .hero-actions::after {
-    content: "0% APR FINANCING\A Up to 24 months for qualified customers.";
-    white-space: pre-line;
+    content: "0% APR financing available for up to 24 months for qualified customers.";
     display: block;
-    flex: 0 0 100%;
-    width: min(100%, 560px);
-    margin-top: 4px;
-    padding: 14px 16px;
-    border: 2px solid var(--gold);
-    border-radius: 12px;
-    background: rgba(7,26,61,.92);
-    color: white;
-    font-size: 15px;
-    line-height: 1.35;
-    font-weight: 700;
-    box-shadow: 0 10px 24px rgba(3,17,45,.2);
-  }
-
-  .hero-actions::after::first-line {
-    color: var(--gold);
+    width: 100%;
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgba(255,255,255,.88);
   }
 
   .hero-mascot {
     display: block !important;
     top: auto;
     right: 14px;
-    bottom: 18px;
+    bottom: 24px;
     width: clamp(165px, 34vw, 220px);
     max-width: 42%;
     z-index: 2;
@@ -82,11 +68,11 @@
 
 @media (max-width: 560px) {
   .hero {
-    min-height: 820px;
+    min-height: 800px;
   }
 
   .hero-copy {
-    padding: 78px 20px 275px;
+    padding: 78px 20px 260px;
   }
 
   .hero-copy h1 {
@@ -115,15 +101,13 @@
   }
 
   .hero-actions::after {
-    width: 100%;
-    padding: 13px 14px;
-    font-size: 14px;
-    line-height: 1.35;
+    max-width: 320px;
+    font-size: 11px;
   }
 
   .hero-mascot {
     right: 6px;
-    bottom: 8px;
+    bottom: 18px;
     width: clamp(155px, 42vw, 190px);
     max-width: 46%;
   }
