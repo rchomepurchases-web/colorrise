@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./mobile-fixes.css";
 import { businessName, siteUrl } from "./seo";
 import ConversionTracking from "./ConversionTracking";
 
