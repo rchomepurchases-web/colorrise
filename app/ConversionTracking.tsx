@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { googleTagManagerId } from "./tracking";
 
 declare global {
   interface Window { dataLayer?: Record<string, unknown>[] }
@@ -9,7 +10,7 @@ declare global {
 export default function ConversionTracking() {
   useEffect(() => {
     window.dataLayer = window.dataLayer ?? [];
-    const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+    const gtmId = googleTagManagerId;
 
     if (gtmId && !document.querySelector(`script[data-gtm="${gtmId}"]`)) {
       window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
