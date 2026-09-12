@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+// The webhook stays server-side and is supplied separately for each Vercel environment.
 const requiredFields = [
   "first_name",
   "last_name",
