@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-// The webhook stays server-side and is supplied separately for each Vercel environment.
 const requiredFields = [
   "first_name",
   "last_name",
@@ -33,6 +32,17 @@ function redirect(request: Request, path: string) {
   return NextResponse.redirect(new URL(path, request.url), 303);
 }
 
+function wantsJson(request: Request) {
+  return request.headers.get("accept")?.includes("application/json");
+}
+
+function failure(request: Request, code: "missing_fields" | "temporarily_unavailable", status: number) {
+  if (wantsJson(request)) {
+    return NextResponse.json({ ok: false, error: code }, { status });
+  }
+  return redirect(request, `/?estimate_error=${code}#estimate`);
+}
+
 export async function POST(request: Request) {
   const formData = await request.formData();
 
@@ -47,14 +57,16 @@ export async function POST(request: Request) {
 
   const hasMissingField = requiredFields.some((field) => !payload[field]);
   if (hasMissingField || !/^\d{5}$/.test(payload.postal_code)) {
-    return redirect(request, "/?estimate_error=missing_fields#estimate");
+    return failure(request, "missing_fields", 400);
   }
 
   const webhookUrl = process.env.ZAPIER_WEBHOOK_URL;
   if (!webhookUrl) {
     console.error("ZAPIER_WEBHOOK_URL is not configured");
-    return redirect(request, "/?estimate_error=temporarily_unavailable#estimate");
+    return failure(request, "temporarily_unavailable", 503);
   }
+
+  const submissionId = crypto.randomUUID();
 
   try {
     const response = await fetch(webhookUrl, {
@@ -62,6 +74,7 @@ export async function POST(request: Request) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...payload,
+        submission_id: submissionId,
         sms_consent: payload.sms_consent === "Yes",
         submitted_at: new Date().toISOString(),
       }),
@@ -72,9 +85,12 @@ export async function POST(request: Request) {
       throw new Error(`Zapier returned ${response.status}`);
     }
 
-    return redirect(request, "/thank-you");
+    if (wantsJson(request)) {
+      return NextResponse.json({ ok: true, submission_id: submissionId });
+    }
+    return redirect(request, `/thank-you?submission=${encodeURIComponent(submissionId)}`);
   } catch (error) {
-    console.error("Estimate webhook failed", error);
-    return redirect(request, "/?estimate_error=temporarily_unavailable#estimate");
+    console.error("Estimate webhook failed", { submissionId, error });
+    return failure(request, "temporarily_unavailable", 502);
   }
 }
