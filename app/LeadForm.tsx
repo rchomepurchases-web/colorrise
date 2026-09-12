@@ -33,20 +33,19 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
   }
 
   return (
-    <form ref={formRef} action="https://formsubmit.co/rc@colorrisecoatings.com" method="POST" onSubmit={trackSubmit} data-lead-form="estimate_request">
-      <input type="hidden" name="_subject" value="New Color Rise estimate request" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="true" />
-      <input type="hidden" name="_next" value="https://colorrisecoatings.com/thank-you" />
+    <form ref={formRef} action="/api/estimate" method="POST" onSubmit={trackSubmit} data-lead-form="estimate_request">
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="form-honeypot" aria-hidden="true" />
       <input type="hidden" name="lead_source" value="Website" />
+      <input type="hidden" name="state" value="AZ" />
       <input type="hidden" name="landing_page" defaultValue="" />
       {trackingKeys.map((key) => <input key={key} type="hidden" name={key} defaultValue="" />)}
 
-      <label><span>Name</span><input type="text" name="full_name" autoComplete="name" placeholder="Your name" required /></label>
+      <label><span>First name</span><input type="text" name="first_name" autoComplete="given-name" placeholder="First name" required /></label>
+      <label><span>Last name</span><input type="text" name="last_name" autoComplete="family-name" placeholder="Last name" required /></label>
       <label><span>Email</span><input type="email" name="email" autoComplete="email" placeholder="you@example.com" required /></label>
       <label><span>Phone</span><input type="tel" name="phone" autoComplete="tel" inputMode="tel" placeholder="(000) 000-0000" required /></label>
       <label><span>ZIP code</span><input type="text" name="postal_code" autoComplete="postal-code" inputMode="numeric" pattern="[0-9]{5}" placeholder="85001" required /></label>
+      <label><span>City</span><input type="text" name="city" autoComplete="address-level2" placeholder="Phoenix" required /></label>
       <label className="full"><span>Project address</span><input type="text" name="street_address" autoComplete="street-address" placeholder="Street address" required /></label>
       <label><span>Project type</span><select name="service_type" defaultValue={defaultService} required><option value="" disabled>Select a service</option><option value="Interior Painting">Interior painting</option><option value="Exterior Painting">Exterior painting</option><option value="Cabinet Refinishing">Cabinet refinishing</option><option value="Epoxy Flooring">Epoxy flooring</option><option value="Commercial Painting">Commercial painting</option></select></label>
       <label><span>Desired timeline</span><select name="project_timeline" defaultValue="" required><option value="" disabled>Select timing</option><option>As soon as possible</option><option>Within 30 days</option><option>1–3 months</option><option>3+ months</option><option>Just researching</option></select></label>
