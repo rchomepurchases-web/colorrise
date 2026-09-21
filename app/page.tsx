@@ -31,7 +31,7 @@ export default function Home() {
   const localBusinessJsonLd = {
     "@context": "https://schema.org", "@type": ["LocalBusiness", "HousePainter"], "@id": `${siteUrl}/#business`, name: businessName, url: siteUrl,
     logo: `${siteUrl}/Logo - Colorrise - Trans (1080 x 1080 px).png`, image: `${siteUrl}/callum-hill-jo4CWjIw4Wc-unsplash.jpg`, telephone: businessPhone, email: businessEmail, priceRange: "$$",
-    areaServed: ["Phoenix", "Chandler", "Gilbert", "Scottsdale", "Tempe", "Mesa", "Queen Creek"].map((name) => ({ "@type": "City", name, containedInPlace: { "@type": "State", name: "Arizona" } })),
+    areaServed: ["Phoenix", "Chandler", "Gilbert", "Scottsdale"].map((name) => ({ "@type": "City", name, containedInPlace: { "@type": "State", name: "Arizona" } })),
     hasOfferCatalog: { "@type": "OfferCatalog", name: "Painting and coating services", itemListElement: ["Interior Painting", "Exterior Painting", "Cabinet Refinishing", "Epoxy Floor Coatings", "Commercial Painting"].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })) },
   };
   const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) };
