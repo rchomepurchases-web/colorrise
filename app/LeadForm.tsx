@@ -18,7 +18,7 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
     if (landingPage) landingPage.value = window.location.href;
   }, []);
 
-  function saveTrackingContext(form: HTMLFormElement) {
+  function saveTrackingContext(form: HTMLFormElement, submissionId: string) {
     const formData = new FormData(form);
     const attribution = Object.fromEntries(
       trackingKeys.map((key) => [key, String(formData.get(key) ?? "")]),
@@ -26,8 +26,11 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
 
     sessionStorage.setItem("colorRiseLeadContext", JSON.stringify({
       service: String(formData.get("service_type") ?? defaultService ?? "not_selected"),
+      submission_id: submissionId,
+      submitted_at: Date.now(),
       ...attribution,
     }));
+    sessionStorage.removeItem("colorRiseLeadTracked");
   }
 
   async function submitEstimate(event: FormEvent<HTMLFormElement>) {
@@ -35,7 +38,6 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
     const form = event.currentTarget;
     if (status === "submitting") return;
 
-    saveTrackingContext(form);
     setStatus("submitting");
 
     try {
@@ -45,8 +47,10 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
         body: new FormData(form),
       });
       const result = await response.json().catch(() => null);
-      if (!response.ok || !result?.ok) throw new Error("Estimate delivery failed");
-      window.location.assign(`/thank-you?submission=${encodeURIComponent(result.submission_id)}`);
+      if (!response.ok || !result?.ok || !result.submission_id) throw new Error("Estimate delivery failed");
+      const submissionId = String(result.submission_id);
+      saveTrackingContext(form, submissionId);
+      window.location.assign(`/thank-you?submission=${encodeURIComponent(submissionId)}`);
     } catch {
       setStatus("error");
     }
