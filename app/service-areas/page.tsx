@@ -5,7 +5,7 @@ import { businessName, safeJsonLd, siteUrl } from "../seo";
 import { featuredServiceAreas } from "./data";
 
 export const metadata: Metadata = {
-  title: "Painting Service Areas | Phoenix Metro | Color Rise Coatings",
+  title: "Painting Service Areas | Phoenix Metro",
   description: "Color Rise Coatings serves homeowners across the Phoenix metro with interior painting, exterior painting, cabinet refinishing, and epoxy floor coatings.",
   alternates: { canonical: "/service-areas" },
 };
