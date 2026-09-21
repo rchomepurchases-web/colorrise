@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Color Rise Coatings",
+  title: "Privacy Policy",
   description: "Learn how Color Rise Coatings collects, uses, and protects information submitted through our website.",
 };
 
