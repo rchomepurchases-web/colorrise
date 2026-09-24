@@ -54,7 +54,7 @@ export default function ServicePage({ service }: { service: ServiceContent }) {
         <img src={service.image} alt={`${service.shortName} project by ${businessName}`} />
       </section>
 
-      <section className="trust-strip" aria-label="What to expect"><div><strong>Clear written scope</strong><span>Know what is included before work begins.</span></div><div><strong>Careful preparation</strong><span>Protection and prep matched to every surface.</span></div><div><strong>Final walkthrough</strong><span>Review the finished work together.</span></div></section>
+      <section className="trust-strip" aria-label="What to expect"><div><strong>Clear written scope</strong><span>Know what is included before work begins.</span></div><div><strong>Careful preparation</strong><span>Protection and prep matched to every surface.</span></div><div><strong>Company-led quality control</strong><span>We review the finished work against the written scope with you.</span></div></section>
 
       <section className="service-benefits section"><div><p className="eyebrow">Built around your property</p><h2>A better finish starts<br />before the <em>first coat.</em></h2></div><div className="benefit-grid">{service.benefits.map((benefit, index) => <article key={benefit.title}><span>0{index + 1}</span><h3>{benefit.title}</h3><p>{benefit.text}</p></article>)}</div></section>
 
