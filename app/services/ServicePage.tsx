@@ -13,6 +13,8 @@ export type ServiceContent = {
   benefits: { title: string; text: string }[];
   process: { title: string; text: string }[];
   faqs: [string, string][];
+  packageNote?: string;
+  localNote?: string;
 };
 
 export function serviceMetadata(service: ServiceContent): Metadata {
@@ -54,11 +56,13 @@ export default function ServicePage({ service }: { service: ServiceContent }) {
         <img src={service.image} alt={`${service.shortName} project by ${businessName}`} />
       </section>
 
-      <section className="trust-strip" aria-label="What to expect"><div><strong>Clear written scope</strong><span>Know what is included before work begins.</span></div><div><strong>Careful preparation</strong><span>Protection and prep matched to every surface.</span></div><div><strong>Company-led quality control</strong><span>We review the finished work against the written scope with you.</span></div></section>
+      <section className="trust-strip" aria-label="What to expect"><div><strong>Clear written scope</strong><span>Know what is included before work begins.</span></div><div><strong>Surface-specific preparation</strong><span>Protection and prep are matched to the substrate and selected system.</span></div><div><strong>Company-led quality control</strong><span>We review the finished work against the written scope with you.</span></div><div><strong>Up to an 8-Year Workmanship Warranty</strong><span>Package and covered-surface eligibility apply.</span></div></section>
 
-      <section className="service-benefits section"><div><p className="eyebrow">Built around your property</p><h2>A better finish starts<br />before the <em>first coat.</em></h2></div><div className="benefit-grid">{service.benefits.map((benefit, index) => <article key={benefit.title}><span>0{index + 1}</span><h3>{benefit.title}</h3><p>{benefit.text}</p></article>)}</div></section>
+      <section className="service-benefits section"><div><p className="eyebrow">Built around your property</p><h2>A better finish starts<br />before the <em>first coat.</em></h2>{service.localNote && <p>{service.localNote}</p>}</div><div className="benefit-grid">{service.benefits.map((benefit, index) => <article key={benefit.title}><span>0{index + 1}</span><h3>{benefit.title}</h3><p>{benefit.text}</p></article>)}</div></section>
 
       <section className="service-process section"><p className="eyebrow light">Our process</p><h2>Clear steps. <em>Careful execution.</em></h2><ol>{service.process.map((step, index) => <li key={step.title}><span>0{index + 1}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol></section>
+
+      {service.packageNote && <section className="testimonial section trust-promise"><p className="eyebrow light">Color Rise protection options</p><blockquote>Essential. Signature. <em>Premier.</em></blockquote><p style={{fontSize:"16px",letterSpacing:0,textTransform:"none",lineHeight:1.7,maxWidth:"850px",margin:"0 auto 30px"}}>{service.packageNote}</p><a className="button spectrum" href="#service-estimate">Compare options at your estimate <span>↗</span></a></section>}
 
       <section className="service-faq section"><div><p className="eyebrow">Good to know</p><h2>{service.shortName}<br /><em>questions answered.</em></h2></div><div>{service.faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
