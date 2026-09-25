@@ -3,8 +3,8 @@ import { siteUrl } from "./seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages = ["interior-painting", "exterior-painting", "cabinet-refinishing", "epoxy-floor-coatings", "commercial-painting"];
-  const serviceAreaPages = ["scottsdale-az", "phoenix-az", "chandler-az", "gilbert-az"];
-  const lastModified = new Date("2026-09-10");
+  const serviceAreaPages = ["phoenix-az", "scottsdale-az", "chandler-az", "gilbert-az", "mesa-az", "tempe-az", "queen-creek-az"];
+  const lastModified = new Date("2026-09-25");
   return [
     { url: siteUrl, lastModified, changeFrequency: "monthly", priority: 1 },
     ...servicePages.map((slug) => ({ url: `${siteUrl}/services/${slug}`, lastModified, changeFrequency: "monthly" as const, priority: 0.9 })),
