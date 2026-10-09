@@ -46,14 +46,14 @@
     display: none !important;
   }
 
-  /* Mobile financing offer: separate the promotional hook from qualification copy. */
+  /* Mobile financing message. */
   .hero-actions::before {
-    content: "0% APR";
+    content: "Financing available";
     display: block;
     flex: 0 0 100%;
     order: 3;
     margin-top: 2px;
-    margin-bottom: -12px;
+    margin-bottom: 0;
     color: var(--gold);
     font-size: 14px;
     line-height: 1.35;
@@ -61,8 +61,8 @@
   }
 
   .hero-actions::after {
-    content: "financing available for up to 24 months for qualified customers.";
-    display: block;
+    content: none;
+    display: none;
     flex: 0 0 100%;
     order: 4;
     width: 100%;
@@ -125,7 +125,7 @@
     max-width: 320px;
     font-size: 13px;
     line-height: 1.35;
-    margin-bottom: -9px;
+    margin-bottom: 0;
   }
 
   .hero-actions::after {
