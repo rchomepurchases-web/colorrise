@@ -15,7 +15,7 @@
 }
 
 .process-estimate-cta small::after {
-  content: "Financing available — including 0% APR for up to 24 months for qualified customers.";
+  content: "Financing available";
   font-size: 14px;
 }
 
