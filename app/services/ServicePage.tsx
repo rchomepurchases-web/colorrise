@@ -68,7 +68,7 @@ export default function ServicePage({ service }: { service: ServiceContent }) {
 
       <section className="estimate section service-estimate" id="service-estimate"><div className="estimate-art"><p>Ready for a<br /><em>higher standard?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Free, no-pressure estimate</p><h2>Tell us about<br />your project.</h2><p>Share the details below. We’ll contact you to discuss the scope and schedule an on-site estimate.</p><LeadForm defaultService={service.name} /></div></section>
 
-      <footer className="article-footer"><span>© {new Date().getFullYear()} {businessName}</span><span><Link href="/privacy-policy">Privacy Policy</Link> · <Link href="/">Home</Link></span></footer>
+      <footer className="article-footer"><span>Arizona ROC #368973</span><span>© {new Date().getFullYear()} {businessName}</span><span><Link href="/privacy-policy">Privacy Policy</Link> · <Link href="/">Home</Link></span></footer>
     </main>
   );
 }

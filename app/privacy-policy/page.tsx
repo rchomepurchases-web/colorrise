@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
           <p>For privacy questions or requests, contact Color Rise Coatings at <a href="mailto:rc@colorrisecoatings.com">rc@colorrisecoatings.com</a> or <a href="tel:+16026156051">(602) 615-6051</a>.</p>
         </div>
       </article>
-      <footer className="article-footer"><span>© {new Date().getFullYear()} Color Rise Coatings</span><Link href="/">Back to home</Link></footer>
+      <footer className="article-footer"><span>Arizona ROC #368973</span><span>© {new Date().getFullYear()} Color Rise Coatings</span><Link href="/">Back to home</Link></footer>
     </main>
   );
 }

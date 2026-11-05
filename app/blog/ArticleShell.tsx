@@ -41,7 +41,7 @@ export function ArticleShell({ title, description, category, image, imageAlt, pa
         <div className="article-body">{children}</div>
       </article>
       <section className="article-cta"><div><p className="eyebrow light">Bring your vision to life</p><h2>Ready for a color<br /><em>conversation?</em></h2></div><div><p>Color Rise combines detailed preparation, professional coatings, and a sharp eye for color.</p><Link className="button spectrum" href="/#estimate">Get a free estimate <span>↗</span></Link></div></section>
-      <footer className="article-footer"><span>© Color Rise Coatings</span><Link href="/">Back to home</Link></footer>
+      <footer className="article-footer"><span>Arizona ROC #368973</span><span>© Color Rise Coatings</span><Link href="/">Back to home</Link></footer>
     </main>
   );
 }

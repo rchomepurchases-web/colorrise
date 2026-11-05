@@ -64,7 +64,7 @@ export default function ServiceAreaPage({ area }: { area: ServiceArea }) {
 
       <section className="estimate section service-estimate" id="service-estimate"><div className="estimate-art"><p>Ready for a<br /><em>higher standard?</em></p></div><div className="estimate-copy"><p className="eyebrow light">Free, no-pressure estimate</p><h2>Tell us about<br />your {area.city} project.</h2><p>Share the details below. We’ll contact you to discuss the scope and schedule an on-site estimate.</p><LeadForm /></div></section>
 
-      <footer className="article-footer"><span>© {new Date().getFullYear()} {businessName}</span><span><Link href="/service-areas">Service Areas</Link> · <Link href="/privacy-policy">Privacy Policy</Link> · <Link href="/">Home</Link></span></footer>
+      <footer className="article-footer"><span>Arizona ROC #368973</span><span>© {new Date().getFullYear()} {businessName}</span><span><Link href="/service-areas">Service Areas</Link> · <Link href="/privacy-policy">Privacy Policy</Link> · <Link href="/">Home</Link></span></footer>
     </main>
   );
 }
