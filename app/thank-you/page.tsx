@@ -22,7 +22,7 @@ export default function ThankYouPage() {
         <p>We received your project details. A Color Rise team member will contact you to discuss the scope and schedule your free estimate.</p>
         <div className="thank-you-actions">
           <Link className="button spectrum" href="/">Return to the website <span>↗</span></Link>
-          <a className="text-link dark" href="tel:+16026156051" data-track="thank-you-call">Call (602) 615-6051</a>
+          <a className="text-link dark" href="tel:+16029627619" data-track="thank-you-call">Call (602) 962-7619</a>
         </div>
       </section>
     </main>

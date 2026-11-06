@@ -8,7 +8,7 @@ export const siteUrl = configuredUrl.startsWith("http")
   : `https://${configuredUrl.replace(/\/$/, "")}`;
 
 export const businessName = "Color Rise Coatings";
-export const businessPhone = "+1-602-615-6051";
+export const businessPhone = "+1-602-962-7619";
 export const businessEmail = "rc@colorrisecoatings.com";
 
 export function safeJsonLd(value: unknown) {

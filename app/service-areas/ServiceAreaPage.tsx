@@ -48,7 +48,7 @@ export default function ServiceAreaPage({ area }: { area: ServiceArea }) {
       </header>
 
       <section className="service-hero">
-        <div className="service-hero-copy"><p className="eyebrow light">Phoenix metro service area</p><h1>House Painters<br /><em>in {area.city}, Arizona.</em></h1><p>{area.intro}</p><div className="hero-actions"><a className="button spectrum" href="#service-estimate">Get a free estimate <span>↗</span></a><a className="text-link" href={`tel:${businessPhone.replace(/[^+\d]/g, "")}`}>(602) 615-6051</a></div></div>
+        <div className="service-hero-copy"><p className="eyebrow light">Phoenix metro service area</p><h1>House Painters<br /><em>in {area.city}, Arizona.</em></h1><p>{area.intro}</p><div className="hero-actions"><a className="button spectrum" href="#service-estimate">Get a free estimate <span>↗</span></a><a className="text-link" href={`tel:${businessPhone.replace(/[^+\d]/g, "")}`}>(602) 962-7619</a></div></div>
         <img src="/callum-hill-jo4CWjIw4Wc-unsplash.jpg" alt={`Professional painting service in ${area.city}, Arizona`} />
       </section>
 

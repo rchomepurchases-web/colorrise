@@ -52,7 +52,7 @@ export default function ServicePage({ service }: { service: ServiceContent }) {
       </header>
 
       <section className="service-hero">
-        <div className="service-hero-copy"><p className="eyebrow light">{service.eyebrow}</p><h1>{service.name}<br /><em>in Phoenix, Arizona.</em></h1><p>{service.description}</p><div className="hero-actions"><a className="button spectrum" href="#service-estimate" data-track="service-hero-estimate">Get a free estimate <span>↗</span></a><a className="text-link" href={`tel:${businessPhone.replace(/[^+\d]/g, "")}`} data-track="service-call">(602) 615-6051</a></div></div>
+        <div className="service-hero-copy"><p className="eyebrow light">{service.eyebrow}</p><h1>{service.name}<br /><em>in Phoenix, Arizona.</em></h1><p>{service.description}</p><div className="hero-actions"><a className="button spectrum" href="#service-estimate" data-track="service-hero-estimate">Get a free estimate <span>↗</span></a><a className="text-link" href={`tel:${businessPhone.replace(/[^+\d]/g, "")}`} data-track="service-call">(602) 962-7619</a></div></div>
         <img src={service.image} alt={`${service.shortName} project by ${businessName}`} />
       </section>
 
