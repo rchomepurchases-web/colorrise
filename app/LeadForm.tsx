@@ -2,35 +2,41 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 
-const trackingKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"] as const;
+import { browserLeadAttribution, leadTrackingKeys } from "./lead-attribution";
 
 export default function LeadForm({ defaultService = "" }: { defaultService?: string }) {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    for (const key of trackingKeys) {
-      const input = formRef.current?.elements.namedItem(key) as HTMLInputElement | null;
-      if (input) input.value = params.get(key) ?? "";
+  function syncTrackingInputs(form: HTMLFormElement) {
+    const attribution = browserLeadAttribution();
+    for (const key of ["landing_page", ...leadTrackingKeys] as const) {
+      const input = form.elements.namedItem(key);
+      if (input instanceof HTMLInputElement) input.value = attribution[key] ?? "";
     }
-    const landingPage = formRef.current?.elements.namedItem("landing_page") as HTMLInputElement | null;
-    if (landingPage) landingPage.value = window.location.href;
-  }, []);
+  }
 
-  function saveTrackingContext(form: HTMLFormElement, submissionId: string) {
-    const formData = new FormData(form);
+  useEffect(() => {
+    if (formRef.current) syncTrackingInputs(formRef.current);
+  }, [defaultService]);
+
+  function saveTrackingContext(formData: FormData, submissionId: string) {
     const attribution = Object.fromEntries(
-      trackingKeys.map((key) => [key, String(formData.get(key) ?? "")]),
+      leadTrackingKeys.map((key) => [key, String(formData.get(key) ?? "")]),
     );
 
-    sessionStorage.setItem("colorRiseLeadContext", JSON.stringify({
-      service: String(formData.get("service_type") ?? defaultService ?? "not_selected"),
-      submission_id: submissionId,
-      submitted_at: Date.now(),
-      ...attribution,
-    }));
-    sessionStorage.removeItem("colorRiseLeadTracked");
+    try {
+      sessionStorage.setItem("colorRiseLeadContext", JSON.stringify({
+        service: String(formData.get("service_type") ?? defaultService ?? "not_selected"),
+        submission_id: submissionId,
+        submitted_at: Date.now(),
+        ...attribution,
+      }));
+      sessionStorage.removeItem("colorRiseLeadTracked");
+    } catch {
+      // The estimate was already accepted; optional conversion tracking must
+      // not show a delivery error or cause the customer to resubmit.
+    }
   }
 
   async function submitEstimate(event: FormEvent<HTMLFormElement>) {
@@ -41,15 +47,18 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
     setStatus("submitting");
 
     try {
+      syncTrackingInputs(form);
+      const formData = new FormData(form);
+
       const response = await fetch("/api/estimate", {
         method: "POST",
         headers: { Accept: "application/json" },
-        body: new FormData(form),
+        body: formData,
       });
       const result = await response.json().catch(() => null);
       if (!response.ok || !result?.ok || !result.submission_id) throw new Error("Estimate delivery failed");
       const submissionId = String(result.submission_id);
-      saveTrackingContext(form, submissionId);
+      saveTrackingContext(formData, submissionId);
       window.location.assign(`/thank-you?submission=${encodeURIComponent(submissionId)}`);
     } catch {
       setStatus("error");
@@ -62,7 +71,7 @@ export default function LeadForm({ defaultService = "" }: { defaultService?: str
       <input type="hidden" name="lead_source" value="Website" />
       <input type="hidden" name="state" value="AZ" />
       <input type="hidden" name="landing_page" defaultValue="" />
-      {trackingKeys.map((key) => <input key={key} type="hidden" name={key} defaultValue="" />)}
+      {leadTrackingKeys.map((key) => <input key={key} type="hidden" name={key} defaultValue="" />)}
 
       <label><span>First name</span><input type="text" name="first_name" autoComplete="given-name" placeholder="First name" required /></label>
       <label><span>Last name</span><input type="text" name="last_name" autoComplete="family-name" placeholder="Last name" required /></label>
